@@ -6,12 +6,15 @@ apk update
 apk add --no-cache wget unzip
 wget https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
 unzip ./Xray-linux-64.zip
+rm ./Xray-linux-64.zip
 
-PORT=${PORT:-443}
-ID=${ID:-"d42e30bc-f02c-40c1-92b9-883739bf0dcf"}
-WSPATH=${WSPATH:-"/wspath"}
+if test -z "$CONFIG"
+then
+    PORT=${PORT:-443}
+    ID=${ID:-"d42e30bc-f02c-40c1-92b9-883739bf0dcf"}
+    WSPATH=${WSPATH:-"/index.html"}
 
-cat > ./config.json <<EOF
+    cat > ./config.json <<EOF
 {
     "inbounds": [{
         "port": ${PORT},
@@ -34,5 +37,8 @@ cat > ./config.json <<EOF
     }]
 }
 EOF
+else
+    echo "$CONFIG" > ./config.json
+fi
 
  ./xray -c ./config.json
