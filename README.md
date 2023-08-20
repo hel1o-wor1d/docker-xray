@@ -32,7 +32,7 @@ For example:
 If you want to use the vless+websocket solution, you can set 3 variables:  
 PORT : Listen port, default 443  
 ID : vless ID, default d42e30bc-f02c-40c1-92b9-883739bf0dcf  
-WSPATH: websocket path, default /wspath
+WSPATH: websocket path, default /index.html
 
 The config.json template:  
 ```
