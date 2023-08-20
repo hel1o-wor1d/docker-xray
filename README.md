@@ -6,7 +6,8 @@ Docker: https://hub.docker.com/r/iamybj/docker-xray
 
 
 ##  Environment variables:  
-If you want to completely custom a config file, just copy the content of the config file and set it to a variable CONFIG.  
+If you want to completely custom a config file, just copy the content of the config file and set it to a variable:  
+CONFIG : the content of the config file.    
 For example:
 ```
 {
